@@ -1,0 +1,164 @@
+/* _content/Cafeteria/Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+html[b-ecsih9o5td], body[b-ecsih9o5td] {
+  margin: 0;
+  padding: 0;
+}
+
+a.navbar-brand[b-ecsih9o5td] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-ecsih9o5td] {
+  color: #d41111;
+}
+
+.btn-primary[b-ecsih9o5td] {
+  background: #d32f2f;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 32px;
+  border: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  margin-left: 20%;
+  font-optical-sizing: auto;
+}
+
+.nav-pills .nav-link.active[b-ecsih9o5td], .nav-pills .show > .nav-link[b-ecsih9o5td] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-ecsih9o5td] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-ecsih9o5td] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-ecsih9o5td] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-ecsih9o5td] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-ecsih9o5td] {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration-color: rgb(255, 255, 255);
+  color: #fff;
+  text-align: center;
+}
+
+.header[b-ecsih9o5td] {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration-color: rgb(255, 255, 255);
+}
+
+html[b-ecsih9o5td], body[b-ecsih9o5td] {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.navbar .navbar-brand[b-ecsih9o5td] {
+  margin-left: 10%
+  !important;
+}
+
+.navbar .navbar-toggler[b-ecsih9o5td]{
+  margin-right: 10%;
+}
+
+/* Ítems del header más grandes */
+.navbar-nav .nav-link[b-ecsih9o5td] {
+  font-size: 1.5rem;
+  padding: 16px 24px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Menú hamburguesa con fondo negro en móvil */
+@media (max-width: 991.98px) {
+  .navbar-collapse[b-ecsih9o5td] {
+    background: #000 !important;
+    padding: 24px 0;
+    min-height: unset;
+    height: auto;
+    display: none !important; /* El menú inicia oculto */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    z-index: 1050;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border-radius: 0 0 24px 24px;
+    transition: display 0.3s;
+  }
+  .navbar-collapse.show[b-ecsih9o5td] {
+    display: flex !important; /* Se muestra solo cuando está desplegado */
+  }
+  .navbar-nav[b-ecsih9o5td] {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    position: static;
+    left: unset;
+    transform: unset;
+  }
+  .navbar-nav .nav-link[b-ecsih9o5td] {
+    color: #fff !important;
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar .btn-custom[b-ecsih9o5td] {
+    margin: 24px auto 0 auto;
+    width: 80%;
+    align-self: center;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .navbar .btn-custom .bi[b-ecsih9o5td] {
+    display: block;
+    margin: 0 auto 8px auto;
+    font-size: 2rem;
+  }
+}
+/* Ícono del menú hamburguesa blanco */
+.navbar-toggler[b-ecsih9o5td] {
+  border-color: #fff !important;
+}
+.navbar-toggler .navbar-toggler-icon[b-ecsih9o5td] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+

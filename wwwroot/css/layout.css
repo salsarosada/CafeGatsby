@@ -1,0 +1,204 @@
+/* Fuente para header y navbar */
+header, .navbar, .navbar-brand, .navbar-nav, .nav-link {
+    font-family: 'Poppins', 'Jost', 'Mulish', sans-serif;
+}
+
+/* Navbar transparente y transición */
+.navbar {
+    background-color: rgba(250, 250, 250, 0) !important;
+    transition: background-color 0.3s, backdrop-filter 0.3s;
+    text-decoration-color: white;
+}
+
+/* Navbar con fondo oscuro al hacer scroll */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.44) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Colores de texto en navbar */
+.navbar, .navbar .navbar-brand, .navbar .nav-link {
+    color: #fff !important;
+}
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+    color: #fff !important;
+}
+
+/* Colores de los links activos, enfocados o hover */
+.navbar .nav-link.active, .navbar .nav-link:focus, .navbar .nav-link:hover {
+    color: #d32f2f !important;
+}
+
+/* Botón personalizado en navbar */
+.navbar .btn-custom {
+    background: #d32f2f;
+    color: #fff;
+    border-radius: 30px;
+    padding: 8px 24px;
+    border: none;
+    font-weight: 500;
+    transition: background 0.2s;
+    margin-right: 40px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+.navbar .btn-custom:hover {
+    background: #b71c1c;
+    color: #fff;
+}
+
+/* Centrar nav-items absolutamente en el navbar */
+.navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+/* Ítems del header más grandes */
+.navbar-nav .nav-link {
+    font-size: 1.3rem;
+    padding: 16px 16px; /* Elimina el exceso horizontal */
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Ícono del menú hamburguesa blanco */
+.navbar-toggler {
+    border-color: #fff !important;
+}
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Menú hamburguesa en móvil: fondo negro, columna, centrado, botón centrado */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: #000 !important;
+        padding: 24px 0;
+        min-height: unset;
+        height: auto;
+        display: none !important; /* El menú inicia oculto */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        z-index: 1050;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        border-radius: 0 0 24px 24px;
+        transition: display 0.3s;
+    }
+    .navbar-collapse.show {
+        display: flex !important; /* Se muestra solo cuando está desplegado */
+    }
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 0;
+        position: static;
+        left: unset;
+        transform: unset;
+    }
+    .navbar-nav .nav-link {
+        color: #fff !important;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar .btn-custom {
+        margin: 24px 0 0 0;
+        width: auto;
+        align-self: center;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .d-flex.ms-auto {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .navbar .btn-custom .bi {
+        display: block;
+        margin: 0 auto 8px auto;
+        font-size: 2rem;
+    }
+}
+
+.footer-custom {
+    background: #111;
+    color: #fff;
+    font-family: 'Poppins', 'Mulish', Arial, sans-serif;
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+.footer-custom .footer-link {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-custom .footer-link:hover {
+    color: #b71c1c;
+    text-decoration: underline;
+}
+.footer-custom .footer-social {
+    display: inline-block;
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+.footer-custom .footer-social img {
+    transition: transform 0.2s;
+}
+.footer-custom .footer-social:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.5);
+}
+@media (max-width: 768px) {
+    .footer-custom .container-fluid {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .footer-custom .footer-left,
+    .footer-custom .footer-center,
+    .footer-custom .footer-right {
+        margin-bottom: 0.5rem;
+    }
+}
+.footer-link-vertical {
+    font-size: 0.95rem;
+    color: #cccccc !important;
+    margin: 0.1rem 0;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding-left: 0;
+}
+.footer-link-vertical:hover {
+    color: #b71c1c !important;
+    text-decoration: underline;
+}
+.footer-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.footer-info {
+    font-size: 0.8rem;
+    color: #cccccc;
+    margin: 0.1rem 0;
+    text-align: center;
+}

@@ -1,0 +1,254 @@
+@page
+@model dynamic
+@{
+    ViewData["Title"] = "Sobre nosotros";
+}
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<!-- Sección de bienvenida -->
+<section class="hero-sobreNosotros" style="background-image: url('/images/SobreNosotros.png'); background-size: cover;">
+    <div class="overlay">
+        <h1 class="hero-sobreNosotros">SOBRE NOSOTROS</h1>
+    </div>
+</section>
+
+<!-- Sección principal de sobre nosotros -->
+<section class="container-fluid sobreNosotros py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 sobreNosotrosTxt px-5">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                En Café Gatsby, creemos que cada taza de café merece una historia. Inspirados en el glamour de los años 20 y la elegancia de la era art déco, hemos creado un espacio donde la sofisticación del pasado se fusiona con los sabores del presente.<br>
+
+                Más que una cafetería, somos una experiencia sensorial. Desde nuestros granos de café seleccionados hasta la ambientación cuidadosamente diseñada, buscamos que cada visita te transporte a un tiempo donde el jazz llenaba el aire y los sueños parecían al alcance de una copa.
+            </p>
+        </div>
+        <div class="col-md-6 text-center position-relative">
+            <div class="img-conocenos">
+                <img src="~/images/Conocenos.jpg" class="img-fluid rounded img-conocenos" alt="Conócenos">
+                <div class="circle-label">
+                    <span id="circle-number">1</span>
+                    <span id="circle-text" style="display:none; margin-left: 2px; font-size: 1rem">Años</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    let current = 1;
+    const max = 5;
+    const span = document.getElementById('circle-number');
+    const text = document.getElementById('circle-text');
+    let animationStarted = false;
+
+    function animateCircleNumber() {
+        if (current <= max) {
+            span.textContent = current;
+            current++;
+            setTimeout(animateCircleNumber, 200);
+        } else {
+            text.style.display = "inline";
+        }
+    }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animationStarted) {
+                animationStarted = true;
+                animateCircleNumber();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(span);
+</script>
+
+<!-- Sección Nuestro Personal -->
+<section class="nuestro-personal-section">
+  <div class="container">
+    <h2 class="nuestro-personal-title">Nuestro Personal</h2>
+    <div class="personal-slider-container">
+      <button class="personal-arrow" id="prevPersonal">&#8592;</button>
+      <div class="personal-slider" id="personalSlider">
+        <div class="personal-card">
+          <img src="/images/Barista.png" class="personal-img" alt="Barista Principal">
+          <div class="personal-nombre">Barista Principal<br>Lucía Herrera</div>
+          <div class="personal-desc">Apasionada por el café de especialidad, Lucía ha perfeccionado su técnica durante más de 8 años. Su conocimiento sobre granos, tuestes y métodos de preparación convierte cada taza en una obra de arte.</div>
+        </div>
+        <div class="personal-card">
+          <img src="/images/Repostero.png" class="personal-img" alt="Chef Repostero">
+          <div class="personal-nombre">Chef Repostero<br>Esteban Morales</div>
+          <div class="personal-desc">Esteban combina técnicas clásicas con un toque moderno para ofrecer postres que no solo deleitan el paladar, sino que también rinden homenaje a la estética del café. Su especialidad: la tarta de chocolate con esencia de cardamomo.</div>
+        </div>
+        <div class="personal-card">
+          <img src="/images/Coordinadora.png" class="personal-img" alt="Coordinadora de Experiencia">
+          <div class="personal-nombre">Coordinadora de Experiencia<br>Mariana Vélez</div>
+          <div class="personal-desc">Encargada de que cada visita sea inolvidable, Mariana cuida cada detalle del ambiente y la atención al cliente, creando una atmósfera acogedora y elegante que refleja el espíritu Gatsby.</div>
+        </div>
+        <div class="personal-card">
+          <img src="/images/Mixologo.png" class="personal-img" alt="Mixólogo de Café">
+          <div class="personal-nombre"> Mixólogo de Café<br>Andrés Calderón</div>
+          <div class="personal-desc">Maestro en la creación de cócteles sin alcohol con base de café, Andrés fusiona ingredientes inusuales para crear bebidas que sorprenden. Cada sorbo cuenta una historia.</div>
+        </div>
+        <div class="personal-card">
+          <img src="/images/Estilo.png" class="personal-img" alt="Encargada de Estilo & Ambientación">
+          <div class="personal-nombre">Encargada de Estilo & Ambientación<br>Sofía Londoño</div>
+          <div class="personal-desc">Responsable de la decoración y el diseño del espacio, Sofía transforma cada rincón en una postal de los años 20, manteniendo viva la estética art déco que distingue a Café Gatsby.</div>
+        </div>
+      </div>
+      <button class="personal-arrow" id="nextPersonal">&#8594;</button>
+    </div>
+
+    <div class="personal-indicators">
+    <span class="indicator-dot"></span>
+    <span class="indicator-dot"></span>
+    <span class="indicator-dot active"></span>
+    <span class="indicator-dot"></span>
+    <span class="indicator-dot"></span>
+  <!-- ... una por cada carta ... -->
+</div>
+
+  </div>
+</section>
+
+<style>
+  #personalSlider .card {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0.5;
+    transform: scale(0.8);
+    display: none;
+  }
+
+  #personalSlider .center {
+    opacity: 1 !important;
+    transform: scale(1.15) !important;
+    z-index: 2;
+  }
+</style>
+
+<script>
+const slider = document.getElementById('personalSlider');
+let cards = Array.from(slider.children);
+let total = cards.length;
+let centerIndex = 1;
+
+function renderSlider() {
+  cards.forEach((card, index) => {
+    card.classList.remove('center');
+    card.style.display = 'none';
+    card.style.opacity = '0.5';
+    card.style.transform = 'scale(0.8) translateX(0)';
+  });
+
+  const showCard = (index, offset = 0) => {
+    if (index >= 0 && index < total) {
+      cards[index].style.display = 'flex';
+      cards[index].style.transform = `scale(0.8) translateX(${offset}%)`;
+    }
+  };
+
+  showCard(centerIndex - 1, -100);
+  showCard(centerIndex + 1, 100);
+
+  const centerCard = cards[centerIndex];
+  centerCard.style.display = 'flex';
+  centerCard.classList.add('center');
+  centerCard.style.transform = 'scale(1.15) translateX(0)';
+  centerCard.style.opacity = '1';
+
+  document.getElementById('prevPersonal').disabled = centerIndex === 0;
+  document.getElementById('nextPersonal').disabled = centerIndex === total - 1;
+
+  // --- NUEVO: Actualizar los indicadores ---
+  const dots = document.querySelectorAll('.indicator-dot');
+  dots.forEach((dot, idx) => {
+    if (idx === centerIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function animateSlider(direction) {
+  const offset = direction === 'left' ? -100 : 100;
+
+  cards.forEach((card, index) => {
+    if (card.style.display === 'flex') {
+      card.style.transform += ` translateX(${offset}%)`;
+    }
+  });
+
+  setTimeout(() => {
+    renderSlider();
+  }, 400);
+}
+
+document.getElementById('prevPersonal').onclick = () => {
+  if (centerIndex > 0) {
+    centerIndex--;
+    animateSlider('right');
+  }
+};
+
+document.getElementById('nextPersonal').onclick = () => {
+  if (centerIndex < total - 1) {
+    centerIndex++;
+    animateSlider('left');
+  }
+};
+
+renderSlider();
+</script>
+
+<!-- Sección Trabaja con Nosotros -->
+<section class="trabaja-nosotros-section">
+  <div class="container">
+    <h2 class="text-center" style="color: #b71c1c; font-family: 'Iceberg', sans-serif; margin-bottom: 32px;">Trabaja con Nosotros</h2>
+    <form class="trabaja-form" method="post" action="#" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono">
+          </div>
+        </div>
+        <div class="col-md-6 col-12 d-flex flex-column justify-content-between">
+          <div class="mb-3">
+            <label for="cv" class="form-label">Sube tu hoja de vida (PDF)</label>
+            <input type="file" class="form-control" id="cv" name="cv" accept="application/pdf" required>
+          </div>
+          <div class="mb-3 flex-grow-1 d-flex flex-column">
+            <label for="mensaje" class="form-label">Cuéntanos por qué quieres trabajar con nosotros</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-custom" id="btnEnviarSolicitud">Enviar Solicitud</button>
+      </div>
+    </form>
+  </div>
+</section>
+<script>
+  // Evento para mostrar mensaje al enviar solicitud
+  document.getElementById('btnEnviarSolicitud').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('¡Su solicitud ha sido enviada!');
+  });
+</script>
+
+

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cafeteria</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- Aquí ya no va la etiqueta <style> -->
+</head>
+<body>
+    <header>
+        <!-- Encabezado -->
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar" style="background-color: #f7f4ef;">
+            <div class="container-fluid p-0 m-0">
+                <a class="navbar-brand d-flex align-items-center" href="/" style="color: #222;">
+                    <img src="~/images/Logo.png" alt="Logo" width="80" height="80" class="rounded-circle me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="/Index" style="color: #fff;">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Menu" style="color: #fff;">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/SobreNosotros" style="color: #fff;">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Contacto" style="color: #fff;">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div class="container-fluid p-0 m-0">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer-custom">
+        <div class="container-fluid d-flex justify-content-between align-items-center py-4 px-4">
+            <div class="footer-left fw-bold" style="font-size: 1.3rem; display: flex; flex-direction: column; align-items: flex-start;">
+                CAFÉ GATSBY
+                <div class="footer-center" style="margin-top: 0.5rem; display: flex; flex-direction: column; align-items: flex-start;">
+                    <a href="/Index" class="footer-link footer-link-vertical">Inicio</a>
+                    <a href="/Menu" class="footer-link footer-link-vertical">Menú</a>
+                    <a href="/SobreNosotros" class="footer-link footer-link-vertical">Sobre Nosotros</a>
+                    <a href="/Contacto" class="footer-link footer-link-vertical">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-middle text-center">
+                <p class="footer-info">© 2025 Café Gatsby</p>
+                <p class="footer-info">Teléfono: 321 878 1850</p>
+                <p class="footer-info">Correo: saraposada1512@gmail.com</p>
+                <p class="footer-info">Página creada por: Sara Posada Fernández</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://facebook.com/" target="_blank" class="footer-social" aria-label="Facebook">
+                    <img src="~/images/Facebook.png" alt="Facebook" width="40" height="40" >
+                </a>
+                <a href="https://www.instagram.com/salsa__rosada/" target="_blank" class="footer-social" aria-label="Instagram">
+                    <img src="~/images/Instagram.png" alt="Instagram" width="35" height="35" >
+                </a>
+                <a href="https://www.linkedin.com/in/saraposada15/" target="_blank" class="footer-social" aria-label="LinkedIn">
+                    <img src="~/images/Linkedin.png" alt="LinkedIn" width="35" height="35" >
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Cambia el color del header al hacer scroll
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Cierra el menú hamburguesa al hacer clic en un enlace
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var navbarCollapse = document.getElementById('navbarNav');
+                if (navbarCollapse.classList.contains('show')) {
+                    var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Cierra el menú hamburguesa al hacer clic fuera del panel
+        document.addEventListener('click', function(event) {
+            var navbarCollapse = document.getElementById('navbarNav');
+            var toggler = document.querySelector('.navbar-toggler');
+            if (
+                navbarCollapse.classList.contains('show') &&
+                !navbarCollapse.contains(event.target) &&
+                !toggler.contains(event.target)
+            ) {
+                var bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

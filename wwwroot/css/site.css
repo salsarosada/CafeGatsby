@@ -1,0 +1,632 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 0;
+  overflow-x: hidden; /* Bloquea el scroll horizontal */
+}
+
+
+.hero-bienvenida {   
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px; /* Aumentado para evitar que el header tape el contenido */
+  box-sizing: border-box;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-bienvenida .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bienvenida h1 {
+  color: #fff;
+  font-size: 8rem;
+  text-align: center;
+  font-family: "Zen Tokyo Zoo", system-ui;
+  font-weight: 400;
+  font-style: normal; 
+}
+
+.hero-sobreNosotros h1 {
+  color: #fff;
+  font-size: 6rem;
+  text-align: center;
+  font-family: "Zen Tokyo Zoo", system-ui;
+  font-weight: 400;
+  font-style: normal; 
+}
+
+.hero-sobreNosotros .overlay {
+  background-position: fixed;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px; /* Aumentado para evitar que el header tape el contenido */
+  box-sizing: border-box;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 8rem;
+  text-align: center;
+  font-family: "Zen Tokyo Zoo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sobreNosotros {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sobreNosotrosTxt h2,
+.sobreNosotrosTxt p {
+  color: #fff;
+  padding-left: 20%;
+}
+
+.sobreNosotrosTxt .btn-custom {
+  background: #d32f2f;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 32px;
+  border: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  margin-left: 20%;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.sobreNosotrosTxt .btn-custom:hover {
+  background: #b71c1c;
+  color: #fff;
+  
+}
+
+/* Header logo y botón */
+@media (max-width: 767.98px) {
+  .sobreNosotrosTxt h2,
+  .sobreNosotrosTxt p {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .sobreNosotrosTxt {
+    text-align: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .sobreNosotrosTxt .btn-custom {
+    margin: 24px auto 24px auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-bienvenida h1 {
+    font-size: 6rem;
+  }
+  .sobreNosotrosTxt h2,
+  .sobreNosotrosTxt p {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .sobreNosotrosTxt {
+    text-align: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .sobreNosotrosTxt .btn-custom {
+    margin: 24px auto 24px auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+h2{
+  font-family: "Iceberg", sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  font-style: normal;
+}
+
+p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.img-conocenos {
+  display: inline-block;
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+}
+
+.circle-label {
+  position: absolute;
+  top: -10px;
+  left: -10%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#b71c1c, #5f0f0f);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+  pointer-events: none;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 4rem;
+}
+.producto-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: center;
+  margin-bottom: 1rem;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.producto-img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  z-index: 1;
+}
+
+.producto-nombre {
+  position: static;
+  color: #222;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 8px;
+  text-shadow: none;
+  z-index: 2;
+  pointer-events: none;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.producto-desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 40, 40, 0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 10px;
+  z-index: 3;
+  transition: opacity 0.3s;
+  text-align: center;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.producto-card:hover .producto-desc {
+  opacity: 2;
+}
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card-img-top {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.ubicacion {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+}
+.ubicacion-section {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-bottom: 10vh;
+}
+
+.ubicacion-section .row {
+  margin: 0;
+}
+
+.ubicacion-texto {
+  color: #fff;
+  padding-right: 2vw;
+  padding-left: 20%;
+}
+
+@media (max-width: 767.98px) {
+  .ubicacion-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .ubicacion-texto {
+    padding: 2vw 4vw;
+  }
+}
+.nuestro-personal-section {
+  background: #fff;
+  padding-top: 32px;   /* Antes era 10% */
+  padding-bottom: 32px; /* Antes era 10% */
+  width: 100vw;
+  position: relative;
+  margin: 0 auto;
+}
+
+.nuestro-personal-section .container {
+  width: 60vw;
+  max-width: 60vw;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+}
+.nuestro-personal-title {
+  text-align: center;
+  font-family: "Iceberg", sans-serif;
+  font-size: 4rem;
+  color: #b71c1c;
+  margin-bottom: 40px;
+}
+.personal-slider-container {
+  
+  width: 100%;
+  height: 100%px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  margin-bottom: 32px;
+}
+.personal-arrow {
+  background: #b71c1c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+  margin: 0 48px; /* Más espacio horizontal */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.personal-arrow:hover {
+  background: #d32f2f;
+}
+.personal-arrow.disabled,
+.personal-arrow:disabled {
+  background: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.personal-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1200px;
+  max-width: 98vw;
+  min-height: 260px;
+  overflow: visible;
+  gap: 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.personal-card {
+  flex: 0 0 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: transform 0.3s, opacity 0.3s;
+  padding: 10px 0;
+}
+.personal-card.center {  
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+.personal-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #b71c1c;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: width 0.3s, height 0.3s;
+}
+.personal-card.center .personal-img {
+  width: 140px;
+  height: 140px;
+}
+.personal-nombre {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 1.1; 
+}
+.personal-card.center .personal-nombre {
+  font-size: 1.2rem;
+  line-height: 1.1; 
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: inline-block;
+  width: 150%;
+  box-sizing: border-box;
+}
+.personal-desc {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.5rem;
+  color: #444;
+  text-align: center;
+  max-width: 300px;
+}
+.personal-card.center .personal-desc {
+  width: 150%;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 991.98px) {
+  .nuestro-personal-section .container {
+    width: 90vw;
+    max-width: 98vw;
+  }
+  .personal-slider {
+    width: 98vw;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .personal-card {
+    flex: 0 0 90%;
+    margin: 0 auto;
+  }
+  .personal-card.center .personal-nombre,
+  .personal-card.center .personal-desc {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+  }
+  .personal-arrow {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    margin: 0 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .nuestro-personal-section .container {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0 2vw;
+  }
+  .personal-slider-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 100vw;
+    height: auto;
+    position: relative;
+  }
+  .personal-arrow {
+    position: static;
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    margin: 0 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    order: unset;
+    z-index: 2;
+  }
+  .personal-slider {
+    flex-direction: row;
+    width: 70vw;
+    min-width: 0;
+    max-width: 80vw;
+    min-height: unset;
+    justify-content: center;
+    align-items: stretch;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .personal-card {
+    flex: 0 0 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: none;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .personal-card.center {
+    display: flex;
+  }
+  .personal-card:not(.center) {
+    display: none !important;
+  }
+}
+.personal-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background 0.3s;
+  display: inline-block;
+}
+.indicator-dot.active {
+  background: #b71c1c;
+}
+.trabaja-nosotros-section {
+  background: #000;
+  padding: 48px 0 48px 0;
+  margin-bottom: 0; /* Sin margen inferior */
+}
+.trabaja-nosotros-section .container {
+  max-width: 600px;
+}
+.trabaja-form .form-label {
+  color: #fff;
+}
+.trabaja-form .form-control {
+  background: #222;
+  color: #fff;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+.trabaja-form .form-control:focus {
+  background: #222;
+  color: #fff;
+  border: 1px solid #b71c1c;
+  box-shadow: 0 0 0 0.2rem rgba(183,28,28,0.25);
+}
+.trabaja-form .btn-custom {
+  background: #d32f2f;
+  color: #fff;
+  border-radius: 30px;
+  padding: 8px 24px;
+  border: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  display: inline-block;
+  width: auto;
+  min-width: unset;
+  margin: 0 auto;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+.trabaja-form .btn-custom:hover {
+  background: #b71c1c;
+  color: #fff;
+}
+@media (max-width: 767.98px) {
+  .trabaja-nosotros-section .container {
+    max-width: 100vw;
+    padding: 0 2vw;
+  }
+  .trabaja-form .row {
+    flex-direction: column;
+  }
+}
+
+.filtro-btn {
+  font-family: 'Poppins', 'Mulish', Arial, sans-serif;
+  border-radius: 2rem;
+  padding: 0.6rem 2rem;
+  font-size: 1.1rem;
+  margin: 0 0.5rem 1rem 0.5rem;
+  border: 2px solid #7c5c3e;
+  background: #fff;
+  color: #7c5c3e;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(124,92,62,0.05);
+  font-weight: 500;
+  outline: none;
+}
+
+.filtro-btn.active,
+.filtro-btn:hover {
+  background: #7c5c3e;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(124,92,62,0.12);
+  border-color: #7c5c3e;
+}
